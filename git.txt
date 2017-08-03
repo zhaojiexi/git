@@ -61,3 +61,33 @@ git reset HEAD file
 git rm xxx是删除工作区和暂存区的文件，commit后才会删除版本库的文件
 
 git rm  的作用和add作用是等同的 放入暂存区
+
+
+-- 分支
+
+git branch dev // 创建分支
+
+git checkcout dev //切换分支
+
+git checkout -b dev //创建并切换分支 
+
+
+git merge dev //合并dev分支到当前分支下
+
+
+git branch -d dev //删除分支
+
+
+!!!分支冲突
+原分支在创建分支后 原分支更改了代码 先分支也进行了修改 及不能合并 产生合并冲突 
+
+git status 可以告诉我们产生冲突的文件
+
+直接查看冲突文件即可看见代码差异
+
+git log --graph --pretty=oneline --abbrev-commit 用带参数的git log也可以看到分支的合并情况：
+
+修改原文件后 再次合并即可
+
+ 
+
