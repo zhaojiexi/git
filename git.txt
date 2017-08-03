@@ -71,7 +71,7 @@ git checkcout dev //切换分支
 
 git checkout -b dev //创建并切换分支 
 
-
+aaaaaaaa
 git merge dev //合并dev分支到当前分支下
 
 
@@ -90,4 +90,4 @@ git log --graph --pretty=oneline --abbrev-commit 用带参数的git log也可以看到分支
 修改原文件后 再次合并即可
 
  
-
+a
