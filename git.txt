@@ -1,0 +1,53 @@
+  //本地上传到远处
+   1.配置Git
+     （1） 首先在本地创建ssh key；
+    $ ssh-keygen -t rsa -C "your_email@youremail.com"
+ 后面的your_email@youremail.com改为你的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在~/下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key。回到github，进入Account Settings，左边选择SSH Keys，Add SSH Key,title随便填，粘贴key。
+	//添加远程连接
+  （2）$ git remote add origin git@github.com:yourName/yourRepo.git
+  
+2.上传到github：
+   $ git push origin master 
+   git push命令会将本地仓库推送到远程服务器。
+
+
+
+git init 建立仓库
+
+
+git add readme.txt
+
+在仓库目录下、子目录也可以 把文件添加进仓库  把文件放入暂存区
+
+
+git commit -m "test"  //文件提交到仓库 -m 提交说明  （把暂存区的内容提交到当前分支）
+
+git status //查看更改过的文件
+
+
+git diff //查看更改文件的内容
+
+
+git log // 查看历史提交
+
+git log --pretty=oneline //只看提交说明
+
+
+git reset --hard HEAD^ //^代表回退一个^^回退两个版本 HEAD~100 100个
+
+git reset --hard 3628164  （‘3628164’ 版本号） //回退到指定版本  版本号没必要写全，前几位就可以了，Git会自动去找
+'
+
+git -reflog  //记录使用的指令及版本号 （恢复文件）
+
+
+
+提交后，用git diff HEAD -- readme.txt命令可以查看工作区和版本库里面最新版本的区
+
+
+
+//1.进入暂存区之前的恢复 add之前  没有--，就变成了“切换到另一个分支”的命令
+git checkout -- file  
+
+//2.进入暂存区之后的恢复 add之后 把文件恢复至工作区 在用checkout 在工作区恢复
+git reser HEAD file
