@@ -89,5 +89,7 @@ git log --graph --pretty=oneline --abbrev-commit 用带参数的git log也可以看到分支
 
 修改原文件后 再次合并即可
 
+--分支管理策略 //合并分支时 默认会用Fast forward（快速）模式 删除分支后会丢掉分支信息 --no-ff禁用它 产生一个新的commit从分支历史上可以看出分支信息
+git merge --no-ff -m "merge with no-ff" dev 
  
-a
+
