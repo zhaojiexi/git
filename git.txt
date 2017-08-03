@@ -50,4 +50,14 @@ git -reflog  //记录使用的指令及版本号 （恢复文件）
 git checkout -- file  
 
 //2.进入暂存区之后的恢复 add之后 把文件恢复至工作区 在用checkout 在工作区恢复
-git reser HEAD file
+git reset HEAD file
+//3.进入暂存区（版本库）后的恢复 commit 可以版本回退
+
+
+--删除
+
+1.rm file  //删除工作区文件 如果确定删除 就git rm (此时能用git checkout -- file 恢复)git commit（提交后就只能回退到指定版本了）  如果误删git checkout -- file 
+
+git rm xxx是删除工作区和暂存区的文件，commit后才会删除版本库的文件
+
+git rm  的作用和add作用是等同的 放入暂存区
