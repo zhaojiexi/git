@@ -112,3 +112,8 @@ git stash list 查看隐藏的工作区
 
 git stash apply stash@{0}
 
+
+//feature_xingongneng 
+
+git branch -D file //用于还没有合并前的分支删除（差异在于大小写d or D）
+
