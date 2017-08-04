@@ -117,3 +117,31 @@ git stash apply stash@{0}
 
 git branch -D file //用于还没有合并前的分支删除（差异在于大小写d or D）
 
+
+
+---------多人协作
+
+git remote -v  查看是否连接 没有则
+//添加远程连接
+$ git remote add origin git@github.com:yourName/yourRepo.git
+
+抓取分支
+多人协作时，大家都会往master和dev分支上推送各自的修改。
+
+现在，模拟一个你的小伙伴，可以在另一台电脑（注意要把SSH Key添加到GitHub）或者同一台电脑的另一个目录下克隆：
+
+clone完之后 只能看到一个master分支
+
+需要创建一个远程dev分支
+git checkout -b dev origin/dev
+
+小伙伴可以push到远程
+
+刚好自己也在修改 如果有冲突可以用git pull
+
+git pull也失败了，原因是没有指定本地dev分支与远程origin/dev分支的链接，根据提示，设置dev和origin/dev的链接：
+建立本地分支和远程分支的关联
+git branch --set-upstream branch-name origin/branch-name。
+
+这回git pull成功，但是合并有冲突 需要手动解决
+
